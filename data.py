@@ -11,11 +11,11 @@ steps = [
     },
     {
         "name": "smallest_root",
-        "text": "Good choice! What expression finds the smallest root?",
+        "text": "<p>Good choice! What expression finds the smallest root?</p> <img src='smallest_root.png' />",
         "options": [
             {"name": "sup_fx_lt_zero", "text": "sup{x ∈ [a,b] :  f(x) &lt; 0}"},
-            {"name": "vx_leq_zero", "text": "define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}"},
-            {"name": "vx_lt_zero", "text": "define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> &lt; 0}"},
+            {"name": "vx_leq_zero", "text": "Define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}"},
+            {"name": "vx_lt_zero", "text": "Define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> &lt; 0}"},
         ],
     },
     {

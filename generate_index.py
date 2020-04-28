@@ -8,6 +8,14 @@ print("""<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  """)
+
+print('<script type="text/javascript">')
+print("var step_sequence = " + str([step["name"] for step in steps]) + ";")
+print('</script>')
+
+
+print("""
   <script src="./main.js"></script>
   <link href="./basic.css" rel="stylesheet" type="text/css" />
   <title>IVT</title>
