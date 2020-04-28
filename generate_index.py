@@ -38,7 +38,7 @@ steps = [
     },
     {
         "name": "sup_fx_lt_zero",
-        "text": "",
+        "text": "this won't do",
         "options": []
     },
     {
