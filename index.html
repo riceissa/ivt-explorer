@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <script src="./main.js"></script>
+  <link href="./basic.css" rel="stylesheet" type="text/css" />
+  <title>IVT</title>
+</head>
+<body>
+
+<div id="main_window">
+  <p>In this module, you will explore how the intermediate value theorem works. You can click below on <span class="clickable" onclick="toggle_show_sidebar('sidebar_tips')">wavy</span> text to display notes in the sidebar.</p>
+  <p><strong>Theorem</strong> (Intermediate value theorem)<strong>.</strong>
+  Let a, b be <span onclick="toggle_show_sidebar('why_real')" class="clickable">real numbers</span> such that <span class="clickable" onclick="toggle_show_sidebar('why_a_lt_b')">a &lt; b</span>.
+    Let f: [a,b] → R be a continuous function such that f(a) &lt; 0 and f(b) &gt; 0.
+    Then there exists c ∈ [a,b] such that f(c) = 0.
+  <p>
+  <p>How do we prove this theorem?
+  There are several approaches, but here we will directly use the least upper bound property of the real numbers, which says that any <span class="clickable" onclick="toggle_show_sidebar('why_nonempty_and_bounded_set')">nonempty set of real numbers which is bounded above</span> has a <i>least</i> upper bound.</p>
+
+<div class="step" id="choose_which_root">
+Let's try to directly find a root of the function f. The displayed function has multiple such roots, so we'll have to pick one of them to find. Which one do you want to find?
+<ul>
+<li>
+Find the smallest (leftmost) root
+<span class="clickable" id="smallest_root_option" onclick="next_step('smallest_root', this.id)">[pick]</span>
+</li>
+<li>
+Find the second smallest root
+<span class="clickable" id="second_smallest_root_option" onclick="next_step('second_smallest_root', this.id)">[pick]</span>
+</li>
+<li>
+Find the penultimate (second from the right) root
+<span class="clickable" id="penultimate_root_option" onclick="next_step('penultimate_root', this.id)">[pick]</span>
+</li>
+<li>
+Find the largest (rightmost) root
+<span class="clickable" id="largest_root_option" onclick="next_step('largest_root', this.id)">[pick]</span>
+</li>
+</ul>
+</div>
+<div class="step" id="smallest_root" style="display: none;">
+Good choice! What expression finds the smallest root?
+<ul>
+<li>
+sup{x ∈ [a,b] :  f(x) &lt; 0}
+<span class="clickable" id="sup_fx_lt_zero_option" onclick="next_step('sup_fx_lt_zero', this.id)">[pick]</span>
+</li>
+<li>
+define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}
+<span class="clickable" id="vx_leq_zero_option" onclick="next_step('vx_leq_zero', this.id)">[pick]</span>
+</li>
+<li>
+define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> &lt; 0}
+<span class="clickable" id="vx_lt_zero_option" onclick="next_step('vx_lt_zero', this.id)">[pick]</span>
+</li>
+</ul>
+</div>
+<div class="step" id="second_smallest_root" style="display: none;">
+
+<ul>
+</ul>
+</div>
+<div class="step" id="penultimate_root" style="display: none;">
+
+<ul>
+</ul>
+</div>
+<div class="step" id="largest_root" style="display: none;">
+
+<ul>
+</ul>
+</div>
+<div class="step" id="sup_fx_lt_zero" style="display: none;">
+this won't do
+<ul>
+</ul>
+</div>
+<div class="step" id="vx_leq_zero" style="display: none;">
+That will work. So let c := sup{x ∈ [a,b] : sup Vx ≤ 0}. Now we have to show that this is actually a real number, i.e. that the least upper bound actually exists. To do this, we have to show that the set {x ∈ [a,b] : sup Vx ≤ 0} is nonempty and bounded above.<br><br>First let's show the set is nonempty.
+<ul>
+<li>
+The set is nonempty since it contains a
+<span class="clickable" id="contains_a_option" onclick="next_step('contains_a', this.id)">[pick]</span>
+</li>
+<li>
+The set is nonempty since it contains b
+<span class="clickable" id="contains_b_option" onclick="next_step('contains_b', this.id)">[pick]</span>
+</li>
+</ul>
+</div>
+<div class="step" id="vx_lt_zero" style="display: none;">
+I think this will work too, but I haven't written this branch yet.
+<ul>
+</ul>
+</div>
+<div class="step" id="contains_a" style="display: none;">
+That's right. V_a = {f(a)}. Since f(a) &lt; 0, sup V_a &lt; 0, so a is in the set.<br><br>Next, let's show that {x ∈ [a,b] : sup Vx ≤ 0} has an upper bound.
+<ul>
+<li>
+a is an upper bound of the set.
+<span class="clickable" id="a_is_ub_option" onclick="next_step('a_is_ub', this.id)">[pick]</span>
+</li>
+<li>
+b is an upper bound of the set.
+<span class="clickable" id="b_is_ub_option" onclick="next_step('b_is_ub', this.id)">[pick]</span>
+</li>
+<li>
+1 is an upper bound of the set.
+<span class="clickable" id="one_is_ub_option" onclick="next_step('one_is_ub', this.id)">[pick]</span>
+</li>
+<li>
++∞ is an upper bound of the set.
+<span class="clickable" id="infty_is_ub_option" onclick="next_step('infty_is_ub', this.id)">[pick]</span>
+</li>
+</ul>
+</div>
+<div class="step" id="contains_b" style="display: none;">
+V_b = f([a,b]) so f(b) ∈ V_b. So sup V_b ≥ f(b) &gt; 0. This means that b cannot be in the set!
+</div>
+<div class="step" id="b_is_ub" style="display: none;">
+That's right. Since {x ∈ [a,b] : sup Vx ≤ 0} is a subset of [a,b], this means that b is an upper bound.
+<ul>
+</ul>
+</div>
+</div>
+
+</body>
+</html>
+
