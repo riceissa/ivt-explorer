@@ -20,7 +20,9 @@ steps = [
     },
     {
         "name": "second_smallest_root",
-        "text": "",
+        "text": '''<p>This might sound like an innocent (if slightly odd) thought. If a function crosses zero several times, surely there's a second smallest location, right? This turns out to be wrong, and here's why. Consider a piecewise function that is constant at zero for some chunk of time:</p>
+                <img src="no_second_smallest_root.png" />
+                <p>Here there is a smallest and largest place where the function equals zero, but there is no second smallest, just like there is no smallest positive real number.</p>''',
         "options": []
     },
     {

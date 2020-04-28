@@ -20,7 +20,10 @@ print("""<!DOCTYPE html>
   Let a, b be <span onclick="toggle_show_sidebar('why_real')" class="clickable">real numbers</span> such that <span class="clickable" onclick="toggle_show_sidebar('why_a_lt_b')">a &lt; b</span>.
     Let f: [a,b] → R be a continuous function such that f(a) &lt; 0 and f(b) &gt; 0.
     Then there exists c ∈ [a,b] such that f(c) = 0.
-  <p>
+  </p>
+  <p>A continuous function can intuitively be thought of as a function that can be drawn without lifting the pencil. So if the function starts out below zero, and ends up above zero, then it makes sense that at some point, the function must have crossed zero. In the graph below, you can see that the function crosses zero five times.</p>
+  <img src="basic_ivt.png" />
+  <p>The intermediate value theorem says nothing about the number of times the function crosses zero.</p>
   <p>How do we prove this theorem?
   There are several approaches, but here we will directly use the least upper bound property of the real numbers, which says that any <span class="clickable" onclick="toggle_show_sidebar('why_nonempty_and_bounded_set')">nonempty set of real numbers which is bounded above</span> has a <i>least</i> upper bound.</p>
 """)
