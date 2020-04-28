@@ -3,6 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  
+<script type="text/javascript">
+var step_sequence = ['choose_which_root', 'smallest_root', 'go_on1', 'second_smallest_root', 'penultimate_root', 'largest_root', 'sup_fx_lt_zero', 'vx_leq_zero', 'vx_lt_zero', 'contains_a', 'contains_b', 'b_is_ub'];
+</script>
+
   <script src="./main.js"></script>
   <link href="./basic.css" rel="stylesheet" type="text/css" />
   <title>IVT</title>
@@ -15,7 +20,10 @@
   Let a, b be <span onclick="toggle_show_sidebar('why_real')" class="clickable">real numbers</span> such that <span class="clickable" onclick="toggle_show_sidebar('why_a_lt_b')">a &lt; b</span>.
     Let f: [a,b] → R be a continuous function such that f(a) &lt; 0 and f(b) &gt; 0.
     Then there exists c ∈ [a,b] such that f(c) = 0.
-  <p>
+  </p>
+  <p>A continuous function can intuitively be thought of as a function that can be drawn without lifting the pencil. So if the function starts out below zero, and ends up above zero, then it makes sense that at some point, the function must have crossed zero. In the graph below, you can see that the function crosses zero five times.</p>
+  <img src="basic_ivt.png" />
+  <p>The intermediate value theorem says nothing about the number of times the function crosses zero.</p>
   <p>How do we prove this theorem?
   There are several approaches, but here we will directly use the least upper bound property of the real numbers, which says that any <span class="clickable" onclick="toggle_show_sidebar('why_nonempty_and_bounded_set')">nonempty set of real numbers which is bounded above</span> has a <i>least</i> upper bound.</p>
 
@@ -41,24 +49,35 @@ Find the largest (rightmost) root
 </ul>
 </div>
 <div class="step" id="smallest_root" style="display: none;">
-Good choice! What expression finds the smallest root?
+<p>Good choice! Now try to come up with an expression for the smallest root!</p> <img src='smallest_root.png' />
+<ul>
+<li>
+Ok, I've thought about it.
+<span class="clickable" id="go_on1_option" onclick="next_step('go_on1', this.id)">[pick]</span>
+</li>
+</ul>
+</div>
+<div class="step" id="go_on1" style="display: none;">
+<p>What expression finds the smallest root? (If the expression you came up with isn't one of the options, then try to see if it's equivalent to one of them.)</p>
 <ul>
 <li>
 sup{x ∈ [a,b] :  f(x) &lt; 0}
 <span class="clickable" id="sup_fx_lt_zero_option" onclick="next_step('sup_fx_lt_zero', this.id)">[pick]</span>
 </li>
 <li>
-define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}
+Define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}
 <span class="clickable" id="vx_leq_zero_option" onclick="next_step('vx_leq_zero', this.id)">[pick]</span>
 </li>
 <li>
-define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> &lt; 0}
+Define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> &lt; 0}
 <span class="clickable" id="vx_lt_zero_option" onclick="next_step('vx_lt_zero', this.id)">[pick]</span>
 </li>
 </ul>
 </div>
 <div class="step" id="second_smallest_root" style="display: none;">
-
+<p>This might sound like an innocent (if slightly odd) thought. If a function crosses zero several times, surely there's a second smallest location, right? This turns out to be wrong, and here's why. Consider a piecewise function that is constant at zero for some chunk of time:</p>
+                <img src="no_second_smallest_root.png" />
+                <p>Here there is a smallest and largest place where the function equals zero, but there is no second smallest, just like there is no smallest positive real number.</p>
 <ul>
 </ul>
 </div>
@@ -124,6 +143,27 @@ That's right. Since {x ∈ [a,b] : sup Vx ≤ 0} is a subset of [a,b], this mean
 <ul>
 </ul>
 </div>
+</div>
+<div id="sidebar">
+  <div id="sidebar_tips" style="display: none;">
+    like this!
+  </div>
+  <div id="why_real" style="display: none;">
+    hello
+  </div>
+  <div id="why_a_lt_b" style="display: none;">
+    We stipulate that a is less than b, because the cases a=b and a &gt; b are less interesting.
+    If a=b, then the interval [a,b] is just the singleton set {a}, so the function consists of a single point (a, f(a)), which is not interesting.
+    If a &gt; b, then the interval [a,b] is empty, so the function is the empty function, so the theorem is vacuously true.
+  </div>
+  <div id="what_is_root" style="display: none;">
+    A root of a function f is a number x such that f(x) = 0.
+  </div>
+  <div id="why_nonempty_and_bounded_set" style="display: none;">
+    <p>The least upper bound property for the real numbers only works when the set S in question is nonempty and bounded above.</p>
+    <p>If the set is empty, i.e. S = Ø, then <i>any</i> number is an upper bound. For example, vacuously for any x ∈ S, we have x ≤ 1 so the number 1 is an upper bound—this works because there isn't a number in S, so anything we say about such a number is true. This works for any number, not just 1. This means that while there are upper bounds, there is no <i>least</i> upper bound, because for any upper  bound, we can just subtract 1 to get an even smaller one.</p>
+    <p>On the other hand, if S is not bounded above, then there is no upper bound at all, so there can't be a least upper bound either.</p>
+  </div>
 </div>
 
 </body>
