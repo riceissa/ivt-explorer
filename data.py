@@ -11,7 +11,12 @@ steps = [
     },
     {
         "name": "smallest_root",
-        "text": "<p>Good choice! What expression finds the smallest root?</p> <img src='smallest_root.png' />",
+        "text": "<p>Good choice! Now try to come up with an expression for the smallest root!</p> <img src='smallest_root.png' />",
+        "options": [{"name": "go_on1", "text": "Ok, I've thought about it."}]
+    },
+    {
+        "name": "go_on1",
+        "text": "<p>What expression finds the smallest root? (If the expression you came up with isn't one of the options, then try to see if it's equivalent to one of them.)</p>",
         "options": [
             {"name": "sup_fx_lt_zero", "text": "sup{x ∈ [a,b] :  f(x) &lt; 0}"},
             {"name": "vx_leq_zero", "text": "Define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}"},
