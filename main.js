@@ -41,7 +41,7 @@ function next_step(next_step_elem_id, option_elem_id) {
     }
     var all_options = option_elem.parentElement.parentElement.children;
     for (var i = 0; i < all_options.length; i++) {
-        if (all_options[i].firstElementChild.id != option_elem_id) {
+        if (all_options[i].lastElementChild.id != option_elem_id) {
             all_options[i].style.color = "#ccc";
         } else {
             all_options[i].style.color = "#000";
