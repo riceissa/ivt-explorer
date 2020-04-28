@@ -1,4 +1,3 @@
-
 function toggle_show_sidebar(elem_id) {
     // hide all the stuff in the sidebar, to make room for the new element to show
     var children = document.getElementById("sidebar").children;
@@ -20,5 +19,12 @@ function next_step(next_step_elem_id, option_elem_id) {
     var y = document.getElementById(option_elem_id);
     if (! y.textContent.endsWith('✓')) {
         y.textContent += " ✓";
+    }
+    var all_options = y.parentElement.parentElement.children;
+    console.log(all_options);
+    for (var i = 0; i < all_options.length; i++) {
+        if (all_options[i].firstChild.id != option_elem_id) {
+            all_options[i].style.color = "#ccc";
+        }
     }
 }

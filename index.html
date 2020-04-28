@@ -21,15 +21,15 @@
   <p>Let's try to directly find a <span class="clickable" onclick="toggle_show_sidebar('what_is_root')">root</span> of the function f. The displayed function has multiple such roots, so we'll have to pick one of them to find. Which one do you want to find?</p>
   <ul>
     <li><span id="smallest_root_option" class="clickable" onclick="next_step('smallest_root', this.id)">Find the smallest (leftmost) root</span></li>
-    <li><span class="clickable">Find the second smallest root</span></li>
-    <li><span class="clickable">Find the penultimate (second from the right) root</span></li>
-    <li><span class="clickable">Find the largest (rightmost) root</span></li>
+    <li><span id="second_smallest_root_option" class="clickable">Find the second smallest root</span></li>
+    <li><span id="penultimate_root_option" class="clickable">Find the penultimate (second from the right) root</span></li>
+    <li><span id="largest_root_option" class="clickable">Find the largest (rightmost) root</span></li>
   </ul>
   <div id="smallest_root" style="display: none;">
     <p>Good choice! What expression finds the smallest root?</p>
     <ul>
       <li><span class="clickable">sup{x ∈ [a,b] :  f(x) &lt; 0}</span></li>
-      <li><span class="clickable" id="vx_leq_zero_option" onclick="next_step('vx_leq_zero')">define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}</span></li>
+      <li><span class="clickable" id="vx_leq_zero_option" onclick="next_step('vx_leq_zero', this.id)">define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}</span></li>
       <li><span class="clickable">define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> &lt; 0}</span></li>
     </ul>
   </div>
