@@ -19,7 +19,9 @@ function next_step(next_step_elem_id, option_elem_id) {
     var y = document.getElementById(option_elem_id);
     // When we select an option, we want to hide all the other branches
     // (otherwise we would be showing text from two different branches, which
-    // is confusing)
+    // is confusing). To hide the other branches, we look up the current step,
+    // find it's index in the list of all steps, and hide all the following
+    // steps. Later on, we will display the correct branch of the next step.
     var current_step_id = y.closest(".step").id;
     var idx = step_sequence.findIndex(x => x === current_step_id);
     for (var i = 0; i < step_sequence.length; i++) {
