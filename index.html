@@ -18,14 +18,16 @@
   <p>
   <p>How do we prove this theorem?
   There are several approaches, but here we will directly use the least upper bound property of the real numbers, which says that any <span class="clickable" onclick="toggle_show_sidebar('why_nonempty_and_bounded_set')">nonempty set of real numbers which is bounded above</span> has a <i>least</i> upper bound.</p>
-  <p>Let's try to directly find a <span class="clickable" onclick="toggle_show_sidebar('what_is_root')">root</span> of the function f. The displayed function has multiple such roots, so we'll have to pick one of them to find. Which one do you want to find?</p>
-  <ul>
-    <li><span id="smallest_root_option" class="clickable" onclick="next_step('smallest_root', this.id)">Find the smallest (leftmost) root</span></li>
-    <li><span id="second_smallest_root_option" class="clickable">Find the second smallest root</span></li>
-    <li><span id="penultimate_root_option" class="clickable">Find the penultimate (second from the right) root</span></li>
-    <li><span id="largest_root_option" class="clickable">Find the largest (rightmost) root</span></li>
-  </ul>
-  <div id="smallest_root" style="display: none;">
+  <div class="step" id="choose_which_root">
+    <p>Let's try to directly find a <span class="clickable" onclick="toggle_show_sidebar('what_is_root')">root</span> of the function f. The displayed function has multiple such roots, so we'll have to pick one of them to find. Which one do you want to find?</p>
+    <ul>
+      <li><span id="smallest_root_option" class="clickable" onclick="next_step('smallest_root', this.id)">Find the smallest (leftmost) root</span></li>
+      <li><span id="second_smallest_root_option" class="clickable">Find the second smallest root</span></li>
+      <li><span id="penultimate_root_option" class="clickable">Find the penultimate (second from the right) root</span></li>
+      <li><span id="largest_root_option" class="clickable" onclick="next_step('largest_root', this.id)">Find the largest (rightmost) root</span></li>
+    </ul>
+  </div>
+  <div class="step" id="smallest_root" style="display: none;">
     <p>Good choice! What expression finds the smallest root?</p>
     <ul>
       <li><span class="clickable">sup{x ∈ [a,b] :  f(x) &lt; 0}</span></li>
@@ -33,7 +35,10 @@
       <li><span class="clickable">define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> &lt; 0}</span></li>
     </ul>
   </div>
-  <div id="vx_leq_zero" style="display: none;">
+  <div class="step" id="largest_root" style="display: none;">
+    <p>This will also work, but I haven't written this branch yet.</p>
+  </div>
+  <div class="step" id="vx_leq_zero" style="display: none;">
     <p>That will work. So let c := sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}. Now we have to show that this is actually a real number, i.e. that the least upper bound actually exists. To do this, we have to show that the set {x ∈ [a,b] : sup V<sub>x</sub> ≤ 0} is <span class="clickable" onclick="toggle_show_sidebar('why_nonempty_and_bounded_set')">nonempty and bounded above</span>.</p>
     <p>First let's show the set is nonempty</p>
     <ul>
