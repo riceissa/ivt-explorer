@@ -17,7 +17,8 @@ body {
 
 .clickable {
     cursor: pointer;
-    text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: #FE6C6C;
+}
+
+.clickable:after {
+    content: " ⓘ";
 }

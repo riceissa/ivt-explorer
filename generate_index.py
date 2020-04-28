@@ -23,7 +23,8 @@ print(r"""
 <body>
 
 <div id="main_window">
-  <p>In this module, you will explore how the intermediate value theorem works. You can click below on <span class="clickable" onclick="toggle_show_sidebar('sidebar_tips')">wavy</span> text to display notes in the sidebar.</p>
+  <p>In this module, you will explore how the intermediate value theorem works. You can click below on <span class="clickable" onclick="toggle_show_sidebar('sidebar_tips')">any text with a circled "i" after it</span> to display notes in the sidebar.</p>
+  <p>This module assumes knowledge of the following: definition of continuous function, the least upper bound property of real numbers, the result that a continuous function defined on a closed and bounded interval is bounded.</p>
   <p><strong>Theorem</strong> (Intermediate value theorem)<strong>.</strong>
   Let \(a, b\) be <span onclick="toggle_show_sidebar('why_real')" class="clickable">real numbers</span> such that <span class="clickable" onclick="toggle_show_sidebar('why_a_lt_b')">\(a &lt; b\)</span>.
     Let \(f: [a,b] \to \mathbf R\) be a continuous function such that \(f(a) &lt; 0\) and \(f(b) &gt; 0\).
