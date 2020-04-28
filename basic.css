@@ -1,0 +1,16 @@
+#main_window {
+    position: absolute;
+    left: 0;
+    width: 800px;
+    background: #fdd;
+}
+
+#sidebar {
+    position: absolute;
+    left: 800px;
+    background: #dff;
+}
+
+.clickable {
+    cursor: pointer;
+}
