@@ -45,10 +45,8 @@ steps = [
         "name": "vx_leq_zero",
         "text": "That will work. So let c := sup{x ∈ [a,b] : sup Vx ≤ 0}. Now we have to show that this is actually a real number, i.e. that the least upper bound actually exists. To do this, we have to show that the set {x ∈ [a,b] : sup Vx ≤ 0} is nonempty and bounded above.<br><br>First let's show the set is nonempty.",
         "options": [
-            {"name": "", "text": ""},
-            {"name": "", "text": ""},
-            {"name": "", "text": ""},
-            {"name": "", "text": ""},
+            {"name": "contains_a", "text": "The set is nonempty since it contains a"},
+            {"name": "contains_b", "text": "The set is nonempty since it contains b"},
         ]
     },
     {
@@ -57,48 +55,22 @@ steps = [
         "options": []
     },
     {
-        "name": "",
-        "text": "",
-        "options": []
+        "name": "contains_a",
+        "text": "That's right. V_a = {f(a)}. Since f(a) &lt; 0, sup V_a &lt; 0, so a is in the set.<br><br>Next, let's show that {x ∈ [a,b] : sup Vx ≤ 0} has an upper bound.",
+        "options": [
+            {"name": "a_is_ub", "text": "a is an upper bound of the set."},
+            {"name": "b_is_ub", "text": "b is an upper bound of the set."},
+            {"name": "one_is_ub", "text": "1 is an upper bound of the set."},
+            {"name": "infty_is_ub", "text": "+∞ is an upper bound of the set."},
+        ]
     },
     {
-        "name": "",
-        "text": "",
-        "options": []
+        "name": "contains_b",
+        "text": "V_b = f([a,b]) so f(b) ∈ V_b. So sup V_b ≥ f(b) &gt; 0. This means that b cannot be in the set!",
     },
     {
-        "name": "",
-        "text": "",
-        "options": []
-    },
-    {
-        "name": "",
-        "text": "",
-        "options": []
-    },
-    {
-        "name": "",
-        "text": "",
-        "options": []
-    },
-    {
-        "name": "",
-        "text": "",
-        "options": []
-    },
-    {
-        "name": "",
-        "text": "",
-        "options": []
-    },
-    {
-        "name": "",
-        "text": "",
-        "options": []
-    },
-    {
-        "name": "",
-        "text": "",
+        "name": "b_is_ub",
+        "text": "That's right. Since {x ∈ [a,b] : sup Vx ≤ 0} is a subset of [a,b], this means that b is an upper bound.",
         "options": []
     },
 ]
