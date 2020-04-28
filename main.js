@@ -13,3 +13,12 @@ function toggle_show_sidebar(elem_id) {
     //     x.style.display = "none";
     // }
 }
+
+function next_step(next_step_elem_id, option_elem_id) {
+    var x = document.getElementById(next_step_elem_id);
+    x.style.display = "block";
+    var y = document.getElementById(option_elem_id);
+    if (! y.textContent.endsWith('✓')) {
+        y.textContent += " ✓";
+    }
+}

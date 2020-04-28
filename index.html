@@ -10,15 +10,41 @@
 <body>
 
 <div id="main_window">
-  <p>In this module, you will explore how the intermediate value theorem works.</p>
+  <p>In this module, you will explore how the intermediate value theorem works. You can click below on <span class="clickable" onclick="toggle_show_sidebar('sidebar_tips')">wavy</span> text to display notes in the sidebar.</p>
   <p><strong>Theorem</strong> (Intermediate value theorem)<strong>.</strong>
   Let a, b be <span onclick="toggle_show_sidebar('why_real')" class="clickable">real numbers</span> such that <span class="clickable" onclick="toggle_show_sidebar('why_a_lt_b')">a &lt; b</span>.
     Let f: [a,b] → R be a continuous function such that f(a) &lt; 0 and f(b) &gt; 0.
     Then there exists c ∈ [a,b] such that f(c) = 0.
   <p>
+  <p>How do we prove this theorem?
+  There are several approaches, but here we will directly use the least upper bound property of the real numbers, which says that any <span class="clickable" onclick="toggle_show_sidebar('why_nonempty_and_bounded_set')">nonempty set of real numbers which is bounded above</span> has a <i>least</i> upper bound.</p>
+  <p>Let's try to directly find a <span class="clickable" onclick="toggle_show_sidebar('what_is_root')">root</span> of the function f. The displayed function has multiple such roots, so we'll have to pick one of them to find. Which one do you want to find?</p>
+  <ul>
+    <li><span id="smallest_root_option" class="clickable" onclick="next_step('smallest_root', this.id)">Find the smallest (leftmost) root</span></li>
+    <li><span class="clickable">Find the second smallest root</span></li>
+    <li><span class="clickable">Find the penultimate (second from the right) root</span></li>
+    <li><span class="clickable">Find the largest (rightmost) root</span></li>
+  </ul>
+  <div id="smallest_root" style="display: none;">
+    <p>Good choice! What expression finds the smallest root?</p>
+    <ul>
+      <li><span class="clickable">sup{x ∈ [a,b] :  f(x) &lt; 0}</span></li>
+      <li><span class="clickable" id="vx_leq_zero_option" onclick="next_step('vx_leq_zero')">define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}</span></li>
+      <li><span class="clickable">define V<sub>x</sub> to be V<sub>x</sub> = f([a,x]) = {f(x) : x ∈ [a,x]}. Then the root in question is sup{x ∈ [a,b] : sup V<sub>x</sub> &lt; 0}</span></li>
+    </ul>
+  </div>
+  <div id="vx_leq_zero" style="display: none;">
+    <p>That will work. So let c := sup{x ∈ [a,b] : sup V<sub>x</sub> ≤ 0}. Now we have to show that this is actually a real number, i.e. that the least upper bound actually exists. To do this, we have to show that the set {x ∈ [a,b] : sup V<sub>x</sub> ≤ 0} is <span class="clickable" onclick="toggle_show_sidebar('why_nonempty_and_bounded_set')">nonempty and bounded above</span>.</p>
+    <ul>
+      <li><span class="clickable"></span></li>
+    </ul>
+  </div>
 </div>
 
 <div id="sidebar">
+  <div id="sidebar_tips" style="display: none;">
+    like this!
+  </div>
   <div id="why_real" style="display: none;">
     hello
   </div>
@@ -26,6 +52,14 @@
     We stipulate that a is less than b, because the cases a=b and a &gt; b are less interesting.
     If a=b, then the interval [a,b] is just the singleton set {a}, so the function consists of a single point (a, f(a)), which is not interesting.
     If a &gt; b, then the interval [a,b] is empty, so the function is the empty function, so the theorem is vacuously true.
+  </div>
+  <div id="what_is_root" style="display: none;">
+    A root of a function f is a number x such that f(x) = 0.
+  </div>
+  <div id="why_nonempty_and_bounded_set" style="display: none;">
+    <p>The least upper bound property for the real numbers only works when the set S in question is nonempty and bounded above.</p>
+    <p>If the set is empty, i.e. S = Ø, then <i>any</i> number is an upper bound. For example, vacuously for any x ∈ S, we have x ≤ 1 so the number 1 is an upper bound—this works because there isn't a number in S, so anything we say about such a number is true. This works for any number, not just 1. This means that while there are upper bounds, there is no <i>least</i> upper bound, because for any upper  bound, we can just subtract 1 to get an even smaller one.</p>
+    <p>On the other hand, if S is not bounded above, then there is no upper bound at all, so there can't be a least upper bound either.</p>
   </div>
 </div>
 
