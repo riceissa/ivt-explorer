@@ -12,7 +12,7 @@
 <div id="main_window">
   <p>In this module, you will explore how the intermediate value theorem works.</p>
   <p><strong>Theorem</strong> (Intermediate value theorem)<strong>.</strong>
-  Let a, b be <span onclick="toggle_show_sidebar('why_real')" class="clickable">real numbers</span> such that a &lt; b.
+  Let a, b be <span onclick="toggle_show_sidebar('why_real')" class="clickable">real numbers</span> such that <span class="clickable" onclick="toggle_show_sidebar('why_a_lt_b')">a &lt; b</span>.
     Let f: [a,b] → R be a continuous function such that f(a) &lt; 0 and f(b) &gt; 0.
     Then there exists c ∈ [a,b] such that f(c) = 0.
   <p>
@@ -21,6 +21,11 @@
 <div id="sidebar">
   <div id="why_real" style="display: none;">
     hello
+  </div>
+  <div id="why_a_lt_b" style="display: none;">
+    We stipulate that a is less than b, because the cases a=b and a &gt; b are less interesting.
+    If a=b, then the interval [a,b] is just the singleton set {a}, so the function consists of a single point (a, f(a)), which is not interesting.
+    If a &gt; b, then the interval [a,b] is empty, so the function is the empty function, so the theorem is vacuously true.
   </div>
 </div>
 
