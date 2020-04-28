@@ -42,12 +42,14 @@ for step in steps:
             print("</li>")
         print("</ul>")
 
-    print('</div>')
+    print('</div>')  # closes class="step"
     first = False
 
+print("</div>")  # closes id="main_window"
 
-print("""</div>
+with open("sidebar.html", "r") as f:
+    print(f.read())
 
-</body>
+print("""</body>
 </html>
 """)
