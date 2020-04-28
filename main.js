@@ -30,7 +30,7 @@ function next_step(next_step_elem_id, option_elem_id) {
 
     var x = document.getElementById(next_step_elem_id);
     x.style.display = "block";
-    document.scrollingElement.scrollTop = window.innerHeight;
+    // document.scrollingElement.scrollTop = window.innerHeight;
 
     if (! option_elem.textContent.endsWith('✓')) {
         // TODO: this is kind of a hack; it destroys the formatting of the
