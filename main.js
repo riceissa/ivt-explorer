@@ -1,4 +1,4 @@
-var step_sequence = ['choose_which_root', 'smallest_root', 'largest_root', 'vx_leq_zero'];
+var step_sequence = ['choose_which_root', 'smallest_root', 'second_smallest_root', 'penultimate_root', 'largest_root', 'sup_fx_lt_zero', 'vx_leq_zero', 'vx_lt_zero', 'contains_a', 'contains_b', 'b_is_ub'];
 
 function toggle_show_sidebar(elem_id) {
     // hide all the stuff in the sidebar, to make room for the new element to show
