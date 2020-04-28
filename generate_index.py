@@ -15,7 +15,7 @@ print("var step_sequence = " + str([step["name"] for step in steps]) + ";")
 print('</script>')
 
 
-print("""
+print(r"""
   <script src="./main.js"></script>
   <link href="./basic.css" rel="stylesheet" type="text/css" />
   <title>IVT</title>
@@ -25,9 +25,9 @@ print("""
 <div id="main_window">
   <p>In this module, you will explore how the intermediate value theorem works. You can click below on <span class="clickable" onclick="toggle_show_sidebar('sidebar_tips')">wavy</span> text to display notes in the sidebar.</p>
   <p><strong>Theorem</strong> (Intermediate value theorem)<strong>.</strong>
-  Let a, b be <span onclick="toggle_show_sidebar('why_real')" class="clickable">real numbers</span> such that <span class="clickable" onclick="toggle_show_sidebar('why_a_lt_b')">a &lt; b</span>.
-    Let f: [a,b] → R be a continuous function such that f(a) &lt; 0 and f(b) &gt; 0.
-    Then there exists c ∈ [a,b] such that f(c) = 0.
+  Let \(a, b\) be <span onclick="toggle_show_sidebar('why_real')" class="clickable">real numbers</span> such that <span class="clickable" onclick="toggle_show_sidebar('why_a_lt_b')">\(a &lt; b\)</span>.
+    Let \(f: [a,b] \to \mathbf R\) be a continuous function such that \(f(a) &lt; 0\) and \(f(b) &gt; 0\).
+    Then there exists \(c \in [a,b]\) such that \(f(c) = 0\).
   </p>
   <p>A continuous function can intuitively be thought of as a function that can be drawn without lifting the pencil. So if the function starts out below zero, and ends up above zero, then it makes sense that at some point, the function must have crossed zero. In the graph below, you can see that the function crosses zero five times.</p>
   <img src="basic_ivt.png" />
